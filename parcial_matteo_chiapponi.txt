@@ -1,0 +1,105 @@
+// Desarrollar una función para cada uno de las siguientes 
+
+// Que reciba por parámetro un número entero y retorne su doble.
+
+const elDoble = numero => {
+    return numero * 2
+}
+// console.log(elDoble(3));
+
+// Que reciba por parámetro dos números enteros y retorne la multiplicación de ambos.  
+
+const multiplicacion = (numero1, numero2) => {
+    return numero1 * numero2
+}
+// console.log(multiplicacion(3, 4));
+
+// Que reciba por parámetro dos números enteros, verificar que sean distintos de 0 y retorne la división de ambos. 
+
+const verificacionYdivicion = (numero1, numero2) => {
+    if (numero1 !== 0 && numero2 !== 0) {
+        return numero1 / numero2
+    }
+}
+// console.log(verificacionYdivicion(10, 5))
+
+// Ejercicio 2:
+// Deberás escribir un objeto literal llamado ciclista 
+// que contenga las siguientes propiedades que deberás completar con tus datos:
+// nombre
+// apellido 
+// edad
+// tiene Bici (TRUE/FALSE)
+
+let ciclista = {
+    nombre: "julian",
+    apellido: "aragon",
+    edad: 15,
+    tieneBici: true
+}
+
+// 2. Teniendo en cuenta los datos del punto número 1.
+// Crear una función que reciba por parámetro el objeto y retorne un string en base
+// a las siguientes condiciones : 
+// si edad es mayor o igual a 18 y tiene bici  “puede competir”
+//  si tiene bici y es menor a 18   “podrá competir pero con un adulto acompañante”
+//  si no tiene bici “No podrá competir ” 
+// *Deberás realizar la invocación de la función de forma que se pueda ver el resultado 
+
+const checkeo = objeto => {
+    if (objeto.edad >= 18 && objeto.tieneBici === true) {
+        return `puede competir`
+    } else if (objeto.edad < 18 && objeto.tieneBici === true) {
+        return `podra competir solo con un adulto acompañante`
+    } else {
+        return `no podra competir`
+    }
+}
+// console.log(checkeo(ciclista));
+
+// Crear un array VACÍO llamado competidores. 
+// Dados estos tres objetos	
+// Agregarlos al array. (utilizando un método JS, pensa cual podrías utilizar)
+// Mostrar por consola el array para ver que contenga esos objetos.
+
+let competidores = []
+
+let competidor1 = {
+    nombre: "juan",
+    edad: 42,
+    kilometrosRecorridos: 80
+}
+let competidor2 = {
+    nombre: "sofia",
+    edad: 22,
+    kilometrosRecorridos: 90
+}
+let competidor3 = {
+    nombre: "maria",
+    edad: 45,
+    kilometrosRecorridos: 70
+}
+
+competidores.push(competidor1, competidor2, competidor3)
+
+// console.log(competidores);
+
+// Crea una función que reciba el array competidores como parámetro, e incremente en 100
+// la cantidad de kilómetros
+// recorridos de cada uno de los competidores, llámala competencia100Km .
+// * Debes utilizar alguna estructura de repetición vista en la materia.
+// Mostrar por consola el array de competidores antes y después de la ejecución de la función.
+
+console.log(competidores);
+
+const competencia100Km = array => {
+    for (let i = 0; i < array.length; i++) {
+        array[i].kilometrosRecorridos = (array[i].kilometrosRecorridos + 100)
+    }
+}
+competencia100Km(competidores);
+console.log(competidores);
+
+
+
+

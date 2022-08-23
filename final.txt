@@ -1,0 +1,174 @@
+// matteo chiapponi
+// camada 10
+
+
+// Dada una lista de estudiantes:
+
+
+let estudiantes = [
+    {
+        estudiante: "Juan",
+        notaConcepto: 4,
+        notaContenido: 10
+    },
+    {
+        estudiante: "Mario",
+        notaConcepto: 8,
+        notaContenido: 8
+    },
+    {
+        estudiante: "Julia",
+        notaConcepto: 5,
+        notaContenido: 8
+    },
+    {
+        estudiante: "Sofia",
+        notaConcepto: 2,
+        notaContenido: 4
+    }
+]
+// Crear una función que decremente 2 puntos la nota de contenido a aquellos alumnos cuya nota de concepto 
+// sea menor o igual a 5.
+
+const decrementador = array => {
+
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i].notaConcepto <= 5) {
+
+            array[i].notaConcepto -= 2
+
+        }
+
+    }
+
+}
+
+// decrementador(estudiantes)
+// console.log(estudiantes);
+
+// Dada la siguiente lista:
+
+let paises = [
+    {
+        nombre: "Australia",
+        continente: "Oceania",
+        poblacion: 18000000,
+        clima: 6
+    },
+    {
+        nombre: "Nueva Zelanda",
+        continente: "Oceania",
+        poblacion: 8000000,
+        clima: 15
+    },
+    {
+        nombre: "China",
+        continente: "Asia",
+        poblacion: 1000000000,
+        clima: 20
+    },
+    {
+        nombre: "Vietnam",
+        continente: "Asia",
+        poblacion: 23000000,
+        clima: 8
+    },
+    {
+        nombre: "Francia",
+        continente: "Europa",
+        poblacion: 65000000,
+        clima: 17
+    },
+    {
+        nombre: "Grecia",
+        continente: "Europa",
+        poblacion: 12000000,
+        clima: 42
+    },
+];
+// grecia china francia nuevaZelanda vietnam australia
+
+
+// Desarrollar una función que reciba por parámetro el array de países y ordene de forma descendente
+// según su clima
+
+
+const ordenador = array => {
+
+    let aux;
+
+    for (let i = 0; i < array.length; i++) {
+
+        for (let j = 0; j < array.length - 1; j++) {
+
+            if ( array[j].clima < array[j + 1].clima ) {
+
+                aux = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = aux
+
+            }
+
+        }
+
+    }
+}
+
+// ordenador(paises)
+// console.log(paises);
+
+
+// Crear una matriz de 5 x 7
+
+let matriz = [
+    [12, 22, 33, 43, 53, 63, 73],
+    [81, 92, 10, 11, 12, 13, 14],
+    [10, 16, 17, 18, 19, 10, 21],
+    [22, 23, 24, 10, 26, 27, 28],
+    [29, 10, 31, 32, 33, 34, 10]
+]
+
+// Crear una función que reciba por parámetro a la matriz, y que sume todos los valores múltiplos de 5.
+// Retornar la suma.
+
+const sumadorMultiplos = matriz => {
+
+    let acc = 0;
+    
+    for (let i = 0; i < matriz.length; i++) {
+        
+        for (let j = 0; j < matriz[i].length; j++) {
+            
+            if ( matriz[i][j] % 5 === 0) {
+
+                acc += matriz[i][j]
+
+            }
+            
+        }
+        
+    }
+    return acc
+}
+// console.log(sumadorMultiplos(matriz))
+
+// Crear una función, que reciba a la matriz por parámetro, y que recorra la columna 6 y
+// modifique todos los valores de la columna 6 por un string que diga: ‘esta es la columna 6’.
+
+const recorredorColumnas = matriz => {
+
+    for (let i = 0; i < matriz.length; i++) {
+        
+        for (let j = 0; j < matriz[i].length; j++) {
+            
+            matriz[i][5] = "esta es la columna 6"
+
+        }
+        
+    }
+
+}
+recorredorColumnas(matriz)
+console.log(matriz);
+
