@@ -69,36 +69,36 @@ const prompt = require("prompt-sync")({ sigint: true });
  */
 function calculadoraPiola(a, b) {
     let tipoDeOperacion = prompt("que operacion queres hacer? suma / resta / multiplicacion / divicion / cuadrado / cubo / sacar porcentaje: ")
-    let valorA = prompt("ingresa el primer valor: ")
-     let valorB = prompt("ingresa el segundo valor: ")
-    if (tipoDeOperacion === "suma"){
-        let valorB = prompt("ingresa el segundo valor: ")
-        return console.log(`el resultado de tu suma es ${parseInt(valorA) + parseInt(valorB)}.`);
+    let valorA = parseInt(prompt("ingresa el primer valor: "))
+    let valorB = parseInt(prompt("ingresa el primer valor: "))
+
+    if (typeof (valorA) || typeof (valorB) !== "number") {
+         return console.log("no ingresaste un numero" + typeof (valorB));
+    }
+
+    if (tipoDeOperacion === "suma") {
+        console.log(`el resultado de tu suma es ${valorA + valorB}.`);
     }
     else if (tipoDeOperacion === "resta") {
-        let valorB = prompt("ingresa el segundo valor: ")
-        return console.log(`el resultado de tu resta es ${parseInt(valorA) - parseInt(valorB)}.`);
+        console.log(`el resultado de tu resta es ${valorA - valorB}.`);
     }
     else if (tipoDeOperacion === "multiplicacion") {
-        let valorB = prompt("ingresa el segundo valor: ")
-        return console.log(`el resultado de tu multiplicacion es ${parseInt(valorA) * parseInt(valorB)}.`);
+        console.log(`el resultado de tu multiplicacion es ${valorA * valorB}.`);
     }
     else if (tipoDeOperacion === "divicion") {
-        let valorB = prompt("ingresa el segundo valor: ")
-        return console.log(`el resultado de tu divicion es ${parseInt(valorA) / parseInt(valorB)}.`);
+        console.log(`el resultado de tu divicion es ${valorA / valorB}.`);
     }
     else if (tipoDeOperacion === "cuadrado") {
-        return console.log(`el resultado del cuadrado es ${parseInt(valorA) * parseInt(valorA)}.`);
+        console.log(`el resultado del cuadrado es ${valorA * valorA}.`);
     }
     else if (tipoDeOperacion === "cubo") {
-        return console.log(`el resultado del cubo es ${parseInt(valorA) * parseInt(valorA ) * parseInt(valorA)}.`);
+        console.log(`el resultado del cubo es ${valorA * valorA * valorA}.`);
     }
     else if (tipoDeOperacion === "sacar porcentaje") {
-        let valorB = prompt("ingresa el segundo valor: ")
-        return console.log(`el resultado del porcentaje es ${parseInt(valorA) * parseInt(valorB ) / 100 }.`);
+        console.log(`el resultado del porcentaje es ${valorA * valorB / 100}.`);
     }
-    else{
-        return console.log("el tipo de operacion no esta disponible en estos momentos, por favor intentelo nuevamente.");
+    else {
+        console.log("el tipo de operacion no esta disponible en estos momentos, por favor intentelo nuevamente.");
     }
 }
-calculadoraPiola()
+calculadoraPiola();
