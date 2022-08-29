@@ -72,9 +72,6 @@ function calculadoraPiola(a, b) {
     let valorA = parseInt(prompt("ingresa el primer valor: "))
     let valorB = parseInt(prompt("ingresa el primer valor: "))
 
-    if (typeof (valorA) || typeof (valorB) !== "number") {
-         return console.log("no ingresaste un numero" + typeof (valorB));
-    }
 
     if (tipoDeOperacion === "suma") {
         console.log(`el resultado de tu suma es ${valorA + valorB}.`);
